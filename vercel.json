@@ -5,7 +5,7 @@
      "destination": "/api/proxy"
    },
       {
-     "source": "/contacts/(.*)",
+     "source": "/contacts",
      "destination": "/api/proxy"
    }
  ]
