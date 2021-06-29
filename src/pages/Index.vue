@@ -15,10 +15,10 @@
           :key="project.node.id"
           :to="'/project/' + project.node.id"
         >
-        <div class="project-image" :style="{
-          backgroundImage: `url(${GRIDSOME_API_URL + project.node.image.url})`
-          }">
-          </div>
+          <g-image
+            class="thumbnail"
+            :src="`${GRIDSOME_API_URL + project.node.image.url}`"
+          ></g-image>
           <h3 class="project-title">{{ project.node.title }}</h3>
           <div
             class="categories"
@@ -135,10 +135,6 @@ export default {
   font-size: 1rem;
   color: #000;
   margin: 2rem 0 1rem;
-}
-.project-image {
-  width: 720px;
-  height: 200px;
 }
 .categories {
   font-size: 0.8rem;
