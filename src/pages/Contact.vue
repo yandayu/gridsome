@@ -47,7 +47,7 @@ export default {
       try {
         const { data } = await axios({
           method: "POST",
-          url: "/api/contacts",
+          url: "/contacts",
           data: this.form,
         });
         this.form = {
