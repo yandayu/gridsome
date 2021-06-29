@@ -6,9 +6,9 @@ module.exports = (req, res) => {
 
     // 处理代理目标地址
     if (req.url.includes('/contacts')) {
-        target = process.env.GRIDSOME_API_URL
+        target = 'http://113.31.146.103:1337/'
     } else if (req.url.includes('/uploads')) {
-        target = process.env.GRIDSOME_API_URL
+        target = 'http://113.31.146.103:1337/'
     }
     // 创建代理对象并转发请求
     createProxyMiddleware({
