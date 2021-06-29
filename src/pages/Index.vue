@@ -11,18 +11,18 @@
       <div class="projects">
         <g-link
           class="project"
-          v-for="projected in $page.project.edges"
-          :key="projected.node.id"
-          :to="'/project/' + projected.node.id"
+          v-for="project in $page.project.edges"
+          :key="project.node.id"
+          :to="'/project/' + project.node.id"
         >
-          <g-image
-            class="thumbnail"
-            :src="`${GRIDSOME_API_URL + projected.node.image.url}`"
-          ></g-image>
-          <h3 class="project-title">{{ projected.node.title }}</h3>
+        <div class="project-image" :style="{
+          backgroundImage: `url(${GRIDSOME_API_URL + project.node.image.url})`
+          }">
+          </div>
+          <h3 class="project-title">{{ project.node.title }}</h3>
           <div
             class="categories"
-            v-for="category in projected.node.categories"
+            v-for="category in project.node.categories"
             :key="category.title"
           >
             <span class="category">{{ category.title }}</span>
@@ -135,6 +135,10 @@ export default {
   font-size: 1rem;
   color: #000;
   margin: 2rem 0 1rem;
+}
+.project-image {
+  width: 720px;
+  height: 200px;
 }
 .categories {
   font-size: 0.8rem;

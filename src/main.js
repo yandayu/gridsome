@@ -6,6 +6,10 @@ import MarkdownIt from 'markdown-it';
 const md = new MarkdownIt();
 
 export default function (Vue, { router, head, isClient }) {
+  head.style.push({
+    name: 'referrer',
+    content: 'no-referrer|no-referrer-when-downgrade|origin|origin-when-crossorigin|unsafe-url'
+  })
   Vue.mixin({
     data() {
       return {
