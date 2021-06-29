@@ -17,7 +17,7 @@
         >
           <g-image
             class="thumbnail"
-            :src="`${project.node.image.url}`"
+            :src="`/api${project.node.image.url}`"
           ></g-image>
           <h3 class="project-title">{{ project.node.title }}</h3>
           <div
